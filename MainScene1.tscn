@@ -1,0 +1,436 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dialogo_player/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/rua3.png" type="Texture" id=3]
+[ext_resource path="res://scripts/MainScene1.gd" type="Script" id=4]
+[ext_resource path="res://dialogo_player/textures/menu_section_9patch.png" type="Texture" id=5]
+[ext_resource path="res://scripts/dialogo_player.gd" type="Script" id=6]
+[ext_resource path="res://cenas/hud.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/rua.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/rua2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/entrada_metro.png" type="Texture" id=10]
+[ext_resource path="res://Font/m5x7.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://sons/DayAndNigh_-_Part_2_Night.ogg" type="AudioStream" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "dialogo"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 37
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "pressSpace"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "dialogo"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "pressSpace"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 2011.47, 66.5669 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 2112.22, 61.3702 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 23.6788, 89.311 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 23.4802, 30.893 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 80.7487, 27.8259 )
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -11281.4 ]
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.427451, 0.396078, 0.396078, 0.219608 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224.76, 108.435 )
+
+[node name="hud" parent="." instance=ExtResource( 7 )]
+
+[node name="dialogo_computador" type="Node2D" parent="hud"]
+position = Vector2( 491.944, 429.666 )
+scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 6 )
+
+[node name="Dialog_Box" type="Control" parent="hud/dialogo_computador"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="hud/dialogo_computador/Dialog_Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -128.0
+margin_right = 360.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 720, 256 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="hud/dialogo_computador/Dialog_Box/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 48.0
+margin_right = -16.0
+margin_bottom = -48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_Label" type="Label" parent="hud/dialogo_computador/Dialog_Box/NinePatchRect/MarginContainer"]
+margin_right = 688.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "LUKEEEE! LU~KEEEE !!! ONDE VOCÊ ESTÁ ????"
+autowrap = true
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_computador/Dialog_Box/NinePatchRect/MarginContainer/Body_Label"]
+autoplay = "dialogo"
+anims/dialogo = SubResource( 2 )
+
+[node name="SpaceBar_NinePatchRect" type="NinePatchRect" parent="hud/dialogo_computador/Dialog_Box/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -185.92
+margin_top = -26.5305
+margin_right = 70.08
+margin_bottom = 21.4695
+rect_min_size = Vector2( 256, 48 )
+rect_scale = Vector2( 1.03821, 1.03821 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="hud/dialogo_computador/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Aperte Enter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_computador/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+autoplay = "pressSpace"
+anims/pressSpace = SubResource( 4 )
+
+[node name="speak_NinePatchRect2" type="NinePatchRect" parent="hud/dialogo_computador/Dialog_Box"]
+margin_left = -415.311
+margin_top = -148.165
+margin_right = -235.311
+margin_bottom = -100.165
+rect_min_size = Vector2( 180, 48 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Speaker_Label" type="Label" parent="hud/dialogo_computador/Dialog_Box/speak_NinePatchRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Player"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogo_escada" type="Node2D" parent="hud"]
+visible = false
+position = Vector2( 491.944, 429.666 )
+scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 6 )
+
+[node name="Dialog_Box" type="Control" parent="hud/dialogo_escada"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="hud/dialogo_escada/Dialog_Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -128.0
+margin_right = 360.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 720, 256 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="hud/dialogo_escada/Dialog_Box/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 48.0
+margin_right = -16.0
+margin_bottom = -48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_Label" type="Label" parent="hud/dialogo_escada/Dialog_Box/NinePatchRect/MarginContainer"]
+margin_right = 688.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Essa é a coleira do Luke! Ele desceu para a estação de metrô? Essa não! Estou MUITO preocupado!"
+autowrap = true
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_escada/Dialog_Box/NinePatchRect/MarginContainer/Body_Label"]
+autoplay = "dialogo"
+anims/dialogo = SubResource( 11 )
+
+[node name="SpaceBar_NinePatchRect" type="NinePatchRect" parent="hud/dialogo_escada/Dialog_Box/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -185.92
+margin_top = -26.5305
+margin_right = 70.08
+margin_bottom = 21.4695
+rect_min_size = Vector2( 256, 48 )
+rect_scale = Vector2( 1.03821, 1.03821 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="hud/dialogo_escada/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Aperte Enter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_escada/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+autoplay = "pressSpace"
+anims/pressSpace = SubResource( 12 )
+
+[node name="speak_NinePatchRect2" type="NinePatchRect" parent="hud/dialogo_escada/Dialog_Box"]
+margin_left = -415.311
+margin_top = -148.165
+margin_right = -235.311
+margin_bottom = -100.165
+rect_min_size = Vector2( 180, 48 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Speaker_Label" type="Label" parent="hud/dialogo_escada/Dialog_Box/speak_NinePatchRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Player"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="casa" type="Sprite" parent="."]
+position = Vector2( 504.557, 90.1856 )
+scale = Vector2( 1.2, 1.2 )
+z_index = -20
+texture = ExtResource( 8 )
+
+[node name="rua" type="Sprite" parent="."]
+position = Vector2( 1629.56, 90.3975 )
+scale = Vector2( 1.2, 1.2 )
+z_index = -20
+texture = ExtResource( 9 )
+
+[node name="rua2" type="Sprite" parent="."]
+position = Vector2( 2547.57, 90.4045 )
+scale = Vector2( 1.2, 1.2 )
+z_index = -20
+texture = ExtResource( 3 )
+
+[node name="rua3" type="Sprite" parent="."]
+position = Vector2( -620.427, 90.1311 )
+scale = Vector2( 1.2, 1.2 )
+z_index = -20
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="entrada_metro" type="Sprite" parent="."]
+position = Vector2( 1816.3, 135.386 )
+scale = Vector2( 5, 5 )
+z_index = -20
+texture = ExtResource( 10 )
+
+[node name="obstaculos" type="Node2D" parent="."]
+
+[node name="paredes" type="StaticBody2D" parent="obstaculos"]
+collision_layer = 2
+collision_mask = 9
+
+[node name="Collision_rua" type="CollisionShape2D" parent="obstaculos/paredes"]
+visible = false
+position = Vector2( 983.959, 268.218 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="paredes2" type="StaticBody2D" parent="obstaculos"]
+collision_layer = 2
+collision_mask = 9
+
+[node name="Collision_parede" type="CollisionShape2D" parent="obstaculos/paredes2"]
+visible = false
+position = Vector2( 990.686, 19.3126 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="barreiras" type="StaticBody2D" parent="obstaculos"]
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaculos/barreiras"]
+position = Vector2( -344.118, 133.898 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="obstaculos/barreiras"]
+position = Vector2( 2319.45, 132.432 )
+shape = SubResource( 8 )
+
+[node name="saida" type="Area2D" parent="."]
+position = Vector2( 1780.38, 138.148 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saida"]
+position = Vector2( -12.2843, 2.83482 )
+shape = SubResource( 9 )
+
+[node name="computador" type="Area2D" parent="."]
+position = Vector2( 1515.3, 155.706 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="computador"]
+position = Vector2( 61, -10 )
+shape = SubResource( 10 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+[connection signal="body_entered" from="saida" to="." method="_on_saida_body_entered"]
+[connection signal="body_entered" from="computador" to="." method="_on_computador_body_entered"]
+[connection signal="body_exited" from="computador" to="." method="_on_computador_body_exited"]

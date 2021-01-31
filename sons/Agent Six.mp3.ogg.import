@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Agent Six.mp3.ogg-9cd4ef07601fe382a3eed0bd1cd9f3a6.oggstr"
+
+[deps]
+
+source_file="res://sons/Agent Six.mp3.ogg"
+dest_files=[ "res://.import/Agent Six.mp3.ogg-9cd4ef07601fe382a3eed0bd1cd9f3a6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

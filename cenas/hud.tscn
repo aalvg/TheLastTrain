@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Font/roboto-regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/roboto-bold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI.gd" type="Script" id=3]
+[ext_resource path="res://UI/UI_Square.png" type="Texture" id=4]
+[ext_resource path="res://cenas/scene_transition.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GradientTexture" id=1]
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512.709, 10.6066 )
+scale = Vector2( 0.501137, 22.2132 )
+texture = SubResource( 1 )
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="TextureRect" parent="UI"]
+self_modulate = Color( 0.192157, 0.192157, 0.192157, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -136.394
+margin_top = -582.991
+margin_right = 113.606
+margin_bottom = -523.991
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelBG" type="TextureRect" parent="UI/BG"]
+margin_left = -34.0
+margin_top = -17.0
+margin_right = -2.0
+margin_bottom = 4.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelText" type="Label" parent="UI/BG/LevelBG"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = -4.02844
+margin_top = -10.0904
+margin_right = 35.9716
+margin_bottom = 31.9096
+custom_fonts/font = ExtResource( 2 )
+text = "25"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="UI/BG"]
+margin_left = 52.0
+margin_top = -15.0
+margin_right = 237.0
+margin_bottom = 4.0
+value = 50.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+tint_under = Color( 0.294118, 0.294118, 0.294118, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XpBar" type="TextureProgress" parent="UI/BG"]
+margin_left = 263.0
+margin_top = -15.0
+margin_right = 448.0
+margin_bottom = 3.0
+value = 80.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+tint_under = Color( 0.294118, 0.294118, 0.294118, 1 )
+tint_over = Color( 0.294118, 0.294118, 0.294118, 1 )
+tint_progress = Color( 0.294118, 0.294118, 0.294118, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldText" type="Label" parent="UI/BG"]
+visible = false
+margin_left = -3.05176e-05
+margin_top = -38.0
+margin_right = 250.0
+margin_bottom = -6.0
+custom_fonts/font = ExtResource( 1 )
+text = "Gold: 500"
+align = 1
+valign = 1
+
+[node name="scene_transition" parent="UI/BG" instance=ExtResource( 5 )]
+margin_left = -400.0
+margin_top = -37.0
+margin_right = 422.0
+margin_bottom = 542.0

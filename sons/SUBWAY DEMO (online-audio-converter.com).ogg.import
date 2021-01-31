@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SUBWAY DEMO (online-audio-converter.com).ogg-e310cf1f40e6f4756c402e69e91e08da.oggstr"
+
+[deps]
+
+source_file="res://sons/SUBWAY DEMO (online-audio-converter.com).ogg"
+dest_files=[ "res://.import/SUBWAY DEMO (online-audio-converter.com).ogg-e310cf1f40e6f4756c402e69e91e08da.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

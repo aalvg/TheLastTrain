@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Valor of Heroes.ogg-15226e76a51a336a9e4020307ab1148f.oggstr"
+
+[deps]
+
+source_file="res://sons/Valor of Heroes.ogg"
+dest_files=[ "res://.import/Valor of Heroes.ogg-15226e76a51a336a9e4020307ab1148f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DayAndNigh_-_Part_2_Night.ogg-d1e5d7d4d77a4c7f2586e63ef66c7cdd.oggstr"
+
+[deps]
+
+source_file="res://sons/DayAndNigh_-_Part_2_Night.ogg"
+dest_files=[ "res://.import/DayAndNigh_-_Part_2_Night.ogg-d1e5d7d4d77a4c7f2586e63ef66c7cdd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

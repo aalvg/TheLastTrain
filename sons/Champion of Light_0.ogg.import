@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Champion of Light_0.ogg-1aa323b21960995a6ada107f5c67309a.oggstr"
+
+[deps]
+
+source_file="res://sons/Champion of Light_0.ogg"
+dest_files=[ "res://.import/Champion of Light_0.ogg-1aa323b21960995a6ada107f5c67309a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

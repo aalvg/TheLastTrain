@@ -1,0 +1,485 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dialogo_player/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/metro.png" type="Texture" id=3]
+[ext_resource path="res://scripts/MainScene3.gd" type="Script" id=4]
+[ext_resource path="res://dialogo_player/textures/menu_section_9patch.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/metro_fechado.png" type="Texture" id=6]
+[ext_resource path="res://cenas/hud.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/metro_todo_fechado.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/metro2.png" type="Texture" id=9]
+[ext_resource path="res://sons/SUBWAY DEMO (online-audio-converter.com).ogg" type="AudioStream" id=10]
+[ext_resource path="res://Font/m5x7.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://sons/Epic.mp3.ogg" type="AudioStream" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.339, 78.743 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 33
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "dialogo"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 29
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "dialogo"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "pressSpace"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "vibracao"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( -1, -1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 10, 36.9332 )
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -11281.4 ]
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 475.924, 193.038 )
+z_index = 20
+
+[node name="obstaculos" type="Node2D" parent="."]
+
+[node name="paredes" type="StaticBody2D" parent="obstaculos"]
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="obstaculos/paredes"]
+polygon = PoolVector2Array( 23.2524, -18.3538, 985.245, -18.3538, 985.245, 83.3547, 788.185, 81.2357, 788.655, 56.4653, 553.625, 64.0333, 552.984, 83.3547, 442.8, 83.3547, 442.8, 142.685, 211.837, 129.971, 205.48, 81.2357, 23.2524, 83.3547, 21.1335, 352.458, 84.7013, 354.577, 82.5824, 312.199, 338.972, 312.199, 338.972, 354.577, 557.222, 358.815, 552.984, 310.08, 796.66, 312.199, 798.779, 358.815, 989.483, 360.934, 989.483, 388.48, 4.18208, 375.766 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="obstaculos/paredes"]
+position = Vector2( 988.07, -2.51096 )
+polygon = PoolVector2Array( 10.856, -13.007, 4853.3, -7.39737, 4845.42, 82.6899, 4287.28, 87.7296, 4283.5, 135.607, 4074.35, 133.087, 4068.05, 90.2495, 3436.83, 87.7296, 3317.14, 86.4697, 3313.36, 131.827, 3099.17, 131.827, 3096.65, 83.9499, 2347, 88.9895, 2341.96, 135.607, 2129.03, 133.087, 2129.03, 92.7693, 1371.82, 90.2495, 1371.82, 136.867, 1162.67, 134.347, 1162.67, 87.7296, 406.719, 86.4697, 409.239, 138.126, 198.832, 140.646, 197.573, 90.2495, 13.6243, 83.9499 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="obstaculos/paredes"]
+polygon = PoolVector2Array( 1001.91, 356.686, 1051.41, 356.686, 1052.82, 309.31, 1308.09, 311.431, 1307.38, 357.393, 1520.22, 354.565, 1521.63, 308.603, 1768.41, 310.017, 1769.12, 356.686, 2018.02, 353.858, 2015.9, 312.846, 2271.87, 312.139, 2273.29, 355.272, 2485.42, 357.393, 2487.54, 309.31, 2735.03, 308.603, 2733.61, 356.686, 2986.05, 355.272, 2987.46, 309.31, 3242.02, 311.431, 3242.02, 353.858, 3457.69, 355.979, 3459.1, 310.724, 3701.64, 312.139, 3698.81, 355.272, 3959.03, 353.858, 3954.79, 312.846, 4138.63, 312.138, 4209.34, 310.017, 4210.76, 353.858, 4424.3, 355.979, 4425.72, 312.846, 4672.5, 310.017, 4671.79, 355.979, 4925.64, 355.272, 4924.23, 308.603, 5180.2, 310.017, 5180.2, 355.979, 5395.87, 355.272, 5397.99, 309.31, 5641.23, 310.724, 5637.7, 353.858, 5834.98, 355.979, 5834.27, 382.849, 1001.2, 379.314 )
+
+[node name="saida" type="Area2D" parent="."]
+position = Vector2( 4200.87, 188.579 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saida"]
+position = Vector2( -3.17871, 28.6055 )
+shape = SubResource( 1 )
+
+[node name="hud" parent="." instance=ExtResource( 7 )]
+
+[node name="dialogo_azul" type="Node2D" parent="hud"]
+visible = false
+position = Vector2( 491.944, 429.666 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Dialog_Box" type="Control" parent="hud/dialogo_azul"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="hud/dialogo_azul/Dialog_Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -128.0
+margin_right = 360.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 720, 256 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="hud/dialogo_azul/Dialog_Box/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 48.0
+margin_right = -16.0
+margin_bottom = -48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_Label" type="Label" parent="hud/dialogo_azul/Dialog_Box/NinePatchRect/MarginContainer"]
+margin_right = 688.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "O.... QUE É AQUILO!?? Não posso deixar que cheguem perto!"
+autowrap = true
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_azul/Dialog_Box/NinePatchRect/MarginContainer/Body_Label"]
+autoplay = "dialogo"
+anims/dialogo = SubResource( 3 )
+
+[node name="SpaceBar_NinePatchRect" type="NinePatchRect" parent="hud/dialogo_azul/Dialog_Box/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -185.92
+margin_top = -26.5305
+margin_right = 70.08
+margin_bottom = 21.4695
+rect_min_size = Vector2( 256, 48 )
+rect_scale = Vector2( 1.03821, 1.03821 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="hud/dialogo_azul/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "Aperte Enter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_azul/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+autoplay = "pressSpace"
+anims/pressSpace = SubResource( 5 )
+
+[node name="speak_NinePatchRect2" type="NinePatchRect" parent="hud/dialogo_azul/Dialog_Box"]
+margin_left = -415.311
+margin_top = -148.165
+margin_right = -235.311
+margin_bottom = -100.165
+rect_min_size = Vector2( 180, 48 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Speaker_Label" type="Label" parent="hud/dialogo_azul/Dialog_Box/speak_NinePatchRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "Jornal Aqui"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogo_amarelo" type="Node2D" parent="hud"]
+visible = false
+position = Vector2( 491.944, 429.666 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Dialog_Box" type="Control" parent="hud/dialogo_amarelo"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="hud/dialogo_amarelo/Dialog_Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -128.0
+margin_right = 360.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 720, 256 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="hud/dialogo_amarelo/Dialog_Box/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 48.0
+margin_right = -16.0
+margin_bottom = -48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_Label" type="Label" parent="hud/dialogo_amarelo/Dialog_Box/NinePatchRect/MarginContainer"]
+margin_right = 688.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Uma informação importante que nosso jornalista leu no metro e o fez pesquisar por alguma coisa importante que não sabemos ainda, mas vamos descobrir e o ajudar etc etc"
+autowrap = true
+percent_visible = 0.0
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_amarelo/Dialog_Box/NinePatchRect/MarginContainer/Body_Label"]
+anims/dialogo = SubResource( 7 )
+
+[node name="SpaceBar_NinePatchRect" type="NinePatchRect" parent="hud/dialogo_amarelo/Dialog_Box/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -185.92
+margin_top = -26.5305
+margin_right = 70.08
+margin_bottom = 21.4695
+rect_min_size = Vector2( 256, 48 )
+rect_scale = Vector2( 1.03821, 1.03821 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="hud/dialogo_amarelo/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "Aperte Enter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="hud/dialogo_amarelo/Dialog_Box/NinePatchRect/SpaceBar_NinePatchRect"]
+autoplay = "pressSpace"
+anims/pressSpace = SubResource( 8 )
+
+[node name="speak_NinePatchRect2" type="NinePatchRect" parent="hud/dialogo_amarelo/Dialog_Box"]
+margin_left = -415.311
+margin_top = -148.165
+margin_right = -235.311
+margin_bottom = -100.165
+rect_min_size = Vector2( 180, 48 )
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Speaker_Label" type="Label" parent="hud/dialogo_amarelo/Dialog_Box/speak_NinePatchRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "Jornal Super"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Node2D" parent="."]
+position = Vector2( -0.567789, -0.567789 )
+
+[node name="metro" type="Sprite" parent="background"]
+position = Vector2( 504.737, 221.556 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="metro7" type="Sprite" parent="background"]
+position = Vector2( -470.373, 221.632 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="metro2" type="Sprite" parent="background"]
+position = Vector2( 1473.83, 221.556 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="metro6" type="Sprite" parent="background"]
+position = Vector2( 2563.73, 221.223 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 3 )
+
+[node name="metro8" type="Sprite" parent="background"]
+position = Vector2( 3538.32, 221.273 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 3 )
+
+[node name="metro9" type="Sprite" parent="background"]
+position = Vector2( 4513.3, 221.278 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 6 )
+
+[node name="metro10" type="Sprite" parent="background"]
+position = Vector2( 5551.46, 221.278 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 8 )
+
+[node name="anim" type="AnimationPlayer" parent="background"]
+autoplay = "vibracao"
+anims/vibracao = SubResource( 9 )
+
+[node name="colunas" type="Node2D" parent="background"]
+
+[node name="passagens" type="Sprite" parent="background/colunas"]
+position = Vector2( 11.3137, 220.617 )
+scale = Vector2( 3, 3 )
+z_index = 20
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="passagens2" type="Sprite" parent="background/colunas"]
+position = Vector2( 1141.04, 220.617 )
+scale = Vector2( 3, 3 )
+z_index = 20
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="passagens3" type="Sprite" parent="background/colunas"]
+position = Vector2( 2029.67, 220.345 )
+scale = Vector2( 3, 3 )
+z_index = 20
+texture = ExtResource( 9 )
+
+[node name="passagens5" type="Sprite" parent="background/colunas"]
+position = Vector2( 2492.75, 220.964 )
+scale = Vector2( 3, 3 )
+z_index = 20
+texture = ExtResource( 9 )
+
+[node name="passagens6" type="Sprite" parent="background/colunas"]
+position = Vector2( 5010.05, 221.377 )
+scale = Vector2( 3, 3 )
+z_index = 20
+texture = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="dialogar" type="Area2D" parent="."]
+position = Vector2( 3860.41, 210.416 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogar"]
+shape = SubResource( 10 )
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+[connection signal="body_entered" from="saida" to="." method="_on_saida_body_entered"]
+[connection signal="body_entered" from="dialogar" to="." method="_on_dialogar_body_entered"]

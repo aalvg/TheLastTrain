@@ -1,0 +1,448 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://cenas/energia_tiro.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/2DLight.png" type="Texture" id=3]
+[ext_resource path="res://sons/click_lanterna.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sprites/lanterna.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/player.png" type="Texture" id=14]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 15.2063
+height = 8.1983
+
+[sub_resource type="Animation" id=2]
+resource_name = "indo"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("rotacao/sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("rotacao/lanterna:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.22841, -76.0978 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("rotacao/lanterna:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("rotacao/lanterna:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.75516, 3.79597 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("rotacao/afastar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("rotacao/afastar:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("rotacao/afastar:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "lateral"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("rotacao/sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("rotacao/lanterna:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("rotacao/lanterna:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 200.053, 15.32 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("rotacao/lanterna:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 11.4114, 4.67097 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("rotacao/afastar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -79.0443, 21.0224 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("rotacao/afastar:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("rotacao/afastar:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 3 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "parada"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("rotacao/sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("rotacao/lanterna:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -9.77532, 81.7371 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("rotacao/lanterna:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("rotacao/lanterna:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.99204, 4.67097 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("rotacao/afastar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16.8179, 170.702 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("rotacao/afastar:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("rotacao/afastar:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("rotacao/sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("rotacao/lanterna:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("rotacao/lanterna:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7.58635, 79.2144 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("rotacao/lanterna:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.99204, 3.77413 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("rotacao/afastar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16.8179, 170.702 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("rotacao/afastar:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("rotacao/afastar:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 59.4676 )
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -140.966 ],
+"_edit_vertical_guides_": [ 388.136 ]
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.957153, 21.7948 )
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+collide_with_areas = true
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/indo = SubResource( 2 )
+anims/lateral = SubResource( 3 )
+anims/parada = SubResource( 4 )
+anims/voltando = SubResource( 5 )
+
+[node name="rotacao" type="Node2D" parent="."]
+
+[node name="sprite" type="Sprite" parent="rotacao"]
+position = Vector2( -1.57489, 8.81946 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 14 )
+vframes = 3
+hframes = 4
+region_rect = Rect2( 0, 0, 45, 45 )
+
+[node name="lanterna" type="Light2D" parent="rotacao"]
+position = Vector2( -7.58635, 79.2144 )
+rotation = 1.5708
+scale = Vector2( 3.99204, 3.77413 )
+enabled = false
+texture = ExtResource( 5 )
+color = Color( 0.972549, 0.752941, 0.0941176, 1 )
+
+[node name="afastar" type="Area2D" parent="rotacao"]
+position = Vector2( -16.8179, 170.702 )
+collision_mask = 4
+
+[node name="Collisionafastar" type="CollisionShape2D" parent="rotacao/afastar"]
+position = Vector2( 0, -94.4941 )
+shape = SubResource( 6 )
+disabled = true
+
+[node name="tempo_tiro" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="energia_tiro" parent="canvas" instance=ExtResource( 1 )]
+margin_left = 635.0
+margin_top = 1.0
+margin_right = 826.0
+margin_bottom = 20.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="cabeca" type="Light2D" parent="."]
+position = Vector2( 0.570033, 14.4378 )
+rotation = 1.5708
+scale = Vector2( 0.141332, 0.0782568 )
+texture = ExtResource( 3 )
+color = Color( 0.972549, 0.752941, 0.0941176, 0.247059 )
+
+[node name="lanterna" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+[connection signal="body_entered" from="rotacao/afastar" to="." method="_on_afastar_body_entered"]
+[connection signal="body_exited" from="rotacao/afastar" to="." method="_on_afastar_body_exited"]
